@@ -92,10 +92,10 @@ type Transfer @entity {
   # The token that has been transfered
   token: Token!
 
-  # The address from where the token was transfered
+  # The address the token was transfered from
   from: Owner
 
-  # The address to where the token was transfered
+  # The address the token was transfered to
   to: Owner
 
   # The timestamp of the block in which the transfer took place
@@ -113,7 +113,7 @@ type Transfer @entity {
 
 ### StakingPool
 
-The StakingPool entity links the pool id, which is a number auotmatically assigned by the [Cover](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/cover/Cover.sol) contract when a new pool is created, and the address of the deployed [StakingPool](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/staking/StakingPool.sol) contract. The ERC721 tokens used by the pool represent staking deposits with the exception of tokenId 0 which is owned by the pool manager.
+The StakingPool entity links the pool id, which is a number auotmatically assigned by the [Cover](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/cover/Cover.sol) contract when a new pool is created, and the address of the deployed [StakingPool](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/staking/StakingPool.sol) contract. The ERC721 tokens used by the pool represent staking deposits with the exception of tokenId 0 which is owned by the pool manager. Transfering the token with tokenId 0 means transfering the rights to manage the pool to the receiving address.
 
 ```graphql
 type StakingPool @entity {
