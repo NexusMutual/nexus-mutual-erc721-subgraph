@@ -20,14 +20,14 @@ export function handleTransfer(event: TransferEvent): void {
   let tokenKeyID = event.params.tokenId
     .toHexString()
     .concat(':'.concat(event.address.toHexString()));
-  let transferId = event.transaction.hash
+  let transferKeyID = event.transaction.hash
     .toHexString()
     .concat(':'.concat(event.transactionLogIndex.toHexString()));
 
   let previousOwner = Owner.load(event.params.from.toHexString());
   let newOwner = Owner.load(event.params.to.toHexString());
   let token = Token.load(tokenKeyID);
-  let transfer = Transfer.load(transferId);
+  let transfer = Transfer.load(transferKeyID);
   let contract = Contract.load(event.address.toHexString());
   let instance = ERC721.bind(event.address);
 
@@ -64,7 +64,7 @@ export function handleTransfer(event: TransferEvent): void {
   token.owner = event.params.to.toHexString();
 
   if (transfer == null) {
-    transfer = new Transfer(transferId);
+    transfer = new Transfer(transferKeyID);
     transfer.token = tokenKeyID;
     transfer.from = event.params.from.toHexString();
     transfer.to = event.params.to.toHexString();
