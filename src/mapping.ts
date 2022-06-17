@@ -87,11 +87,6 @@ export function handleTransfer(event: TransferEvent): void {
     contract.symbol = symbol.value;
   }
 
-  let totalSupply = instance.try_totalSupply();
-  if (!totalSupply.reverted) {
-    contract.totalSupply = totalSupply.value;
-  }
-
   previousOwner.save();
   newOwner.save();
   token.save();

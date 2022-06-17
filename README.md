@@ -11,7 +11,7 @@ contracts and Nexus Mutual's [CoverNFT](https://github.com/NexusMutual/smart-con
 
 ### Contract
 
-The Contract entity keeps track of minted tokens, suplpy, name and symbol for individual ERC721 instances which can currently be either [CoverNFT](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/cover/CoverNFT.sol) or [StakingPool](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/staking/StakingPool.sol) instances created by the [Cover](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/cover/Cover.sol) contract.
+The Contract entity keeps track of minted tokens, name and symbol for individual ERC721 instances which can currently be either [CoverNFT](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/cover/CoverNFT.sol) or [StakingPool](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/staking/StakingPool.sol) instances created by the [Cover](https://github.com/NexusMutual/smart-contracts/blob/nexus-v2/contracts/modules/cover/Cover.sol) contract.
 
 ```graphql
 type Contract @entity {
@@ -23,9 +23,6 @@ type Contract @entity {
 
   # The symbol of the ERC721 contract
   symbol: String
-
-  # The total number of tokens minted
-  totalSupply: BigInt
 
   # The list tokens
   mintedTokens: [Token!]! @derivedFrom(field: "contract")
