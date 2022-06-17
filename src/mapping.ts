@@ -113,7 +113,7 @@ export function handleStakingPoolCreation(
   contract.save();
 
   log.debug(
-    "creating ERC721 dynamic data source at address {}",
+    "creating ERC721 dynamic data source from address {}",
     [event.params.stakingPoolAddress.toHexString()]
   );
   ERC721Template.create(event.params.stakingPoolAddress);
