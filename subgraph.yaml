@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Nexus Mutual ERC721 Subgraph (Cover & staking NFTs)
-repository: https://github.com/schmidsi/generic-erc721-subgraph
+repository: https://github.com/NexusMutual/nexus-mutual-erc721-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
