@@ -1,13 +1,13 @@
 {
-  "name": "nexus-mutual-cover",
+  "name": "nexus-mutual-erc721",
   "license": "MIT",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ nexus-mutual-cover",
-    "create-local": "graph create --node http://localhost:8020/ nexus-mutual-cover",
-    "remove-local": "graph remove --node http://localhost:8020/ nexus-mutual-cover",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 nexus-mutual-cover"
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ nexus-mutual-erc721",
+    "create-local": "graph create --node http://localhost:8020/ nexus-mutual-erc721",
+    "remove-local": "graph remove --node http://localhost:8020/ nexus-mutual-erc721",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 nexus-mutual-erc721"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.21.1",
